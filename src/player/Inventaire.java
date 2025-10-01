@@ -1,9 +1,13 @@
-public class Invetaire {
+package player;
+
+import player.item.Item;
+
+public class Inventaire {
     private Hero hero;
     public final static int MAX_ITEM=20;
     private Item[] items;
 
-    public Invetaire(Hero hero){
+    public Inventaire(Hero hero){
         this.hero = hero;
         this.items = new Item[MAX_ITEM];
     }

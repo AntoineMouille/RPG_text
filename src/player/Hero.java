@@ -1,3 +1,5 @@
+package player;
+
 public class Hero extends Character {
     private int level;
     private Classe classe;
@@ -7,7 +9,7 @@ public class Hero extends Character {
 
 
     public Hero(String name,TYPE_CLASSE typeClasse, int health, int mana, int stamina, int attak, int defense ) {
-        super(name, TYPE.HERO, health, mana, stamina, attak, defense);
+        super(name,TYPE.HERO, health, mana, stamina, attak, defense);
         this.level = 1;
         this.typeClasse = typeClasse;
         this.classe = new Classe(this.typeClasse);

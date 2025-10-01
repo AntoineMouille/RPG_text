@@ -1,3 +1,5 @@
+package player;
+
 public abstract class Character {
     public int health,mana,stamina,attak,defense;
     public String name;

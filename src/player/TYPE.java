@@ -1,6 +1,8 @@
+package player;
+
 public enum TYPE {
     HERO,
-    ENNNEMIE,
+    ENNEMIE,
     BOSS,
     PNG
 }
