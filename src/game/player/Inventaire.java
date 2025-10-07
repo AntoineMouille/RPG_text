@@ -1,20 +1,18 @@
-package player;
+package game.player;
 
-import player.item.Item;
+import game.player.item.Item;
 
 public class Inventaire {
-    private Hero hero;
+
     public final static int MAX_ITEM=20;
     private Item[] items;
 
-    public Inventaire(Hero hero){
-        this.hero = hero;
+    public Inventaire(){
+
         this.items = new Item[MAX_ITEM];
     }
 
-    public Hero getHero() {
-        return hero;
-    }
+
     public Item[] getItems() {
         return items;
     }
