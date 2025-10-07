@@ -51,9 +51,9 @@ public class Hero extends Character {
         return this.name;
     }
 
-
-
-
+    public void setClasse(Classe classe) {
+        this.classe = classe;
+    }
 
 
 }

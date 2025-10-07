@@ -17,7 +17,7 @@ public class Ennemie extends Character {
     }
 
     public boolean estVivant(){
-        if(health<=0) return false;
+        if(this.health<=0) return false;
         else return true;
     }
 
