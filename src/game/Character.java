@@ -1,4 +1,6 @@
-package game.player;
+package game;
+
+import game.player.TYPE;
 
 public abstract class Character {
     public int health,mana,stamina,attak,defense;
