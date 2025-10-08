@@ -1,5 +1,6 @@
 package game;
 
+import game.player.Classe;
 import game.player.Hero;
 import game.player.Inventaire;
 import game.player.TYPE_CLASSE;
@@ -31,7 +32,9 @@ public class Combat {
     public void creationHero() {
         Hero personnage = getHero();
         Scanner scanner = new Scanner(System.in);
-        TYPE_CLASSE classe = null;
+        Classe classe = new Classe(null);
+        int mana = 0,attaque =0,defense=0,stamina=0;
+
 
         System.out.println("donnez votre nom de hero : ");
         String nom = scanner.nextLine();
@@ -41,13 +44,25 @@ public class Combat {
             int indClasse = scanner.nextInt();
             switch (indClasse) {
                 case 1:
-                    classe = TYPE_CLASSE.GUERRIER;
+                    classe = new Classe(TYPE_CLASSE.GUERRIER);
+                    mana = classe.statsBaseMana();
+                    attaque = classe.statsBaseAttaque();
+                    defense = classe.statsBaseDefense();
+                    stamina = classe.statsbaseStamina();
                     break;
                 case 2:
-                    classe = TYPE_CLASSE.MAGE;
+                    classe = new Classe(TYPE_CLASSE.MAGE);
+                    mana = classe.statsBaseMana();
+                    attaque = classe.statsBaseAttaque();
+                    defense = classe.statsBaseDefense();
+                    stamina = classe.statsbaseStamina();
                     break;
                 case 3:
-                    classe = TYPE_CLASSE.ARCHER;
+                    classe = new Classe(TYPE_CLASSE.ARCHER);
+                    mana = classe.statsBaseMana();
+                    attaque = classe.statsBaseAttaque();
+                    defense = classe.statsBaseDefense();
+                    stamina = classe.statsbaseStamina();
                     break;
                 default:
                     System.out.println("choisissez un nombre valide");
@@ -56,12 +71,12 @@ public class Combat {
         }while(classe == null);
 
         Inventaire inventaire = new Inventaire();
-        Hero hero = new Hero(nom, classe, 15, 10, 10, 10, 10,inventaire);
+        Hero hero = new Hero(nom, classe, 50, mana, stamina, attaque, defense,inventaire);
         setHero(hero);
     }
 
     public void creationEnnemie() {
-        Ennemie ennemie = new Ennemie("goblin",10,5,5,2,1);
+        Ennemie ennemie = new Ennemie("goblin",40,5,5,2,1);
         setEnneme(ennemie);
     }
 
@@ -74,7 +89,7 @@ public class Combat {
         choix = scanner.nextInt();
         switch (choix) {
                     case 1:
-                        ennemie.setHealth(ennemie.getHealth() - 2);
+                        ennemie.setHealth(ennemie.getHealth() - personnage.getAttaque());
                         break;
                     case 2:
                         personnage.setHealth(personnage.getHealth() + 1);

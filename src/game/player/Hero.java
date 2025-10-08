@@ -11,11 +11,11 @@ public class Hero extends Character {
 
 
 
-    public Hero(String name,TYPE_CLASSE typeClasse, int health, int mana, int stamina, int attak, int defense, Inventaire inventaire ) {
+    public Hero(String name,Classe classe, int health, int mana, int stamina, int attak, int defense, Inventaire inventaire ) {
         super(name, TYPE.HERO, health, mana, stamina, attak, defense);
         this.level = 1;
-        this.typeClasse = typeClasse;
-        this.classe = new Classe(this.typeClasse);
+
+        this.classe = classe;
         this.inventaire = inventaire;
     }
 
@@ -32,19 +32,8 @@ public class Hero extends Character {
         return inventaire;
     }
 
-
-    public void levelUp(){
-        if (this.level<LEVEL_MAX)this.level++;
-        else System.out.println("niveau max ateint");
-    }
-
     public Classe getClasse() {
         return classe;
-    }
-
-    public boolean estVivant(){
-        if(health<=0) return false;
-        else return true;
     }
 
     public String getName(){
@@ -54,6 +43,22 @@ public class Hero extends Character {
     public void setClasse(Classe classe) {
         this.classe = classe;
     }
+
+    public void levelUp(){
+        if (this.level<LEVEL_MAX)this.level++;
+        else System.out.println("niveau max ateint");
+    }
+
+
+
+    public boolean estVivant(){
+        if(health<=0) return false;
+        else return true;
+    }
+
+
+
+
 
 
 }
